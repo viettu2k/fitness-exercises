@@ -8,7 +8,7 @@ import ExerciseVideos from '../components/ExerciseVideos';
 import SimilarExercises from '../components/SimilarExercises';
 
 const ExerciseDetail = () => {
-  const [exercisesDetail, setExercisesDetail] = useState({});
+  const [exerciseDetail, setExerciseDetail] = useState({});
   const { id } = useParams();
 
   useEffect(() => {
@@ -17,10 +17,10 @@ const ExerciseDetail = () => {
       const youtubeSearchUrl =
         'https://youtube-search-and-download.p.rapidapi.com';
       const exerciseDetailData = await fetchData(
-        `${exercisesDbUrl}/exercises/${id}`,
+        `${exercisesDbUrl}/exercises/exercise/${id}`,
         exerciseOptions
       );
-      setExercisesDetail(exerciseDetailData);
+      setExerciseDetail(exerciseDetailData);
     };
 
     fetchExercisesData();
@@ -28,7 +28,7 @@ const ExerciseDetail = () => {
 
   return (
     <Box>
-      <Detail exerciseDetail={exercisesDetail} />
+      <Detail exerciseDetail={exerciseDetail} />
       <ExerciseVideos />
       <SimilarExercises />
     </Box>
