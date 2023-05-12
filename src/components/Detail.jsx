@@ -7,7 +7,6 @@ import EquipmentImage from '../assets/icons/equipment.png';
 
 const Detail = ({ exerciseDetail }) => {
   const { bodyPart, gifUrl, name, target, equipment } = exerciseDetail;
-
   const extraDetail = [
     { icon: BodyPartImage, name: bodyPart },
     { icon: TargetImage, name: target },
@@ -16,18 +15,18 @@ const Detail = ({ exerciseDetail }) => {
 
   return (
     <Stack
-      gap="60px"
+      gap='60px'
       sx={{ flexDirection: { lg: 'row' }, p: '20px', alignItems: 'center' }}
     >
-      <img src={gifUrl} loading="lazy" className="detail-image" alt={name} />
+      <img src={gifUrl} loading='lazy' className='detail-image' alt={name} />
       <Stack sx={{ gap: { lg: '35px', xs: '20px' } }}>
-        <Typography variant="h3">{name}</Typography>
-        <Typography variant="h5">
+        <Typography variant='h3'>{name}</Typography>
+        <Typography variant='h5'>
           Exercise keep you strong. {name} is one the best exercises to target
           your {target}. It will help you improve your mood and gain energy.
         </Typography>
         {extraDetail.map((item) => (
-          <Stack key={item.name} direction="row" gap="24px" alignItems="center">
+          <Stack key={item.name} direction='row' gap='24px' alignItems='center'>
             <Button
               sx={{
                 background: '#fff2db',
@@ -42,7 +41,7 @@ const Detail = ({ exerciseDetail }) => {
                 style={{ width: '50px', height: '50px' }}
               />
             </Button>
-            <Typography textTransform="capitalize" variant="h5">
+            <Typography textTransform='capitalize' variant='h5'>
               {item.name}
             </Typography>
           </Stack>
